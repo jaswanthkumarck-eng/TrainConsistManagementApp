@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,11 +7,22 @@ public class TrainConsistManagementApp {
 
         System.out.println("=== Train Consist Management App ===");
 
-        List<String> bogies = new ArrayList<>();
+        List<String> passengerBogies = new ArrayList<>();
 
-        System.out.println("Train consist initialized.");
-        System.out.println("Initial number of bogies: " + bogies.size());
+        passengerBogies.add("Sleeper");
+        passengerBogies.add("AC Chair");
+        passengerBogies.add("First Class");
 
-        System.out.println("System ready for further operations.");
+        System.out.println("Passenger Bogies: " + passengerBogies);
+
+        passengerBogies.remove("AC Chair");
+
+        System.out.println("After Removal: " + passengerBogies);
+
+        if (passengerBogies.contains("Sleeper")) {
+            System.out.println("Sleeper exists");
+        }
+
+        System.out.println("Final Bogies: " + passengerBogies);
     }
 }
