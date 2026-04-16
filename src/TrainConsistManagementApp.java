@@ -1,41 +1,31 @@
+import java.util.Arrays;
+
 public class TrainConsistManagementApp {
 
     public static void main(String[] args) {
 
         System.out.println("=== Train Consist Management App ===");
 
-        // Array of passenger capacities
-        int[] capacities = {72, 56, 24, 70, 60};
+        // Array of bogie names
+        String[] bogieNames = {
+                "Sleeper",
+                "AC Chair",
+                "First Class",
+                "General",
+                "Luxury"
+        };
 
+        // Before sorting
         System.out.println("\nBefore Sorting:");
-        printArray(capacities);
+        System.out.println(Arrays.toString(bogieNames));
 
-        // Bubble Sort
-        int n = capacities.length;
+        // Built-in sorting
+        Arrays.sort(bogieNames);
 
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-
-                if (capacities[j] > capacities[j + 1]) {
-                    // Swap
-                    int temp = capacities[j];
-                    capacities[j] = capacities[j + 1];
-                    capacities[j + 1] = temp;
-                }
-            }
-        }
-
-        System.out.println("\nAfter Sorting (Ascending):");
-        printArray(capacities);
+        // After sorting
+        System.out.println("\nAfter Sorting (Alphabetical):");
+        System.out.println(Arrays.toString(bogieNames));
 
         System.out.println("\nSystem ready for further operations.");
-    }
-
-    // Helper method to print array
-    static void printArray(int[] arr) {
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
     }
 }
