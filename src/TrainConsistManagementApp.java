@@ -4,38 +4,28 @@ public class TrainConsistManagementApp {
 
         System.out.println("=== Train Consist Management App ===");
 
-        // Array of passenger capacities
-        int[] capacities = {72, 56, 24, 70, 60};
+        // Array of bogie IDs
+        String[] bogieIds = {"BG101", "BG205", "BG309", "BG412", "BG550"};
 
-        System.out.println("\nBefore Sorting:");
-        printArray(capacities);
+        // Search key
+        String searchKey = "BG309";
 
-        // Bubble Sort
-        int n = capacities.length;
+        boolean found = false;
 
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-
-                if (capacities[j] > capacities[j + 1]) {
-                    // Swap
-                    int temp = capacities[j];
-                    capacities[j] = capacities[j + 1];
-                    capacities[j + 1] = temp;
-                }
+        // Linear Search
+        for (int i = 0; i < bogieIds.length; i++) {
+            if (bogieIds[i].equals(searchKey)) {
+                found = true;
+                System.out.println("Bogie Found at position: " + i);
+                break; // stop early
             }
         }
 
-        System.out.println("\nAfter Sorting (Ascending):");
-        printArray(capacities);
-
-        System.out.println("\nSystem ready for further operations.");
-    }
-
-    // Helper method to print array
-    static void printArray(int[] arr) {
-        for (int num : arr) {
-            System.out.print(num + " ");
+        // Result
+        if (!found) {
+            System.out.println("Bogie not found");
         }
-        System.out.println();
+
+        System.out.println("Search completed.");
     }
 }
